@@ -11,6 +11,7 @@ return require('packer').startup(function(use)
 		-- or                            , branch = '0.1.x',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
+	use 'mfussenegger/nvim-dap'
 	use ({
 		'rebelot/kanagawa.nvim',
 		as = 'kanagawa',
@@ -21,6 +22,7 @@ return require('packer').startup(function(use)
 			vim.cmd('colorscheme kanagawa-lotus')
 		end
 	})
+	use 'tikhomirov/vim-glsl'
 	use {
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v3.x',
