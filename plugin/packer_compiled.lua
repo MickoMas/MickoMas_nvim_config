@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/mikeos/.cache/nvim/packer_hererocks/2.1.1727870382/share/lua/5.1/?.lua;/home/mikeos/.cache/nvim/packer_hererocks/2.1.1727870382/share/lua/5.1/?/init.lua;/home/mikeos/.cache/nvim/packer_hererocks/2.1.1727870382/lib/luarocks/rocks-5.1/?.lua;/home/mikeos/.cache/nvim/packer_hererocks/2.1.1727870382/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/mikeos/.cache/nvim/packer_hererocks/2.1.1727870382/lib/lua/5.1/?.so"
+local package_path_str = "/home/mikeos/.cache/nvim/packer_hererocks/2.1.1741730670/share/lua/5.1/?.lua;/home/mikeos/.cache/nvim/packer_hererocks/2.1.1741730670/share/lua/5.1/?/init.lua;/home/mikeos/.cache/nvim/packer_hererocks/2.1.1741730670/lib/luarocks/rocks-5.1/?.lua;/home/mikeos/.cache/nvim/packer_hererocks/2.1.1741730670/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/mikeos/.cache/nvim/packer_hererocks/2.1.1741730670/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -79,15 +79,25 @@ _G.packer_plugins = {
     path = "/home/mikeos/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["autoclose.nvim"] = {
+  ["cmp-dap"] = {
     loaded = true,
-    path = "/home/mikeos/.local/share/nvim/site/pack/packer/start/autoclose.nvim",
-    url = "https://github.com/m4xshen/autoclose.nvim"
+    path = "/home/mikeos/.local/share/nvim/site/pack/packer/start/cmp-dap",
+    url = "https://github.com/rcarriga/cmp-dap"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/mikeos/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["diffview.nvim"] = {
+    loaded = true,
+    path = "/home/mikeos/.local/share/nvim/site/pack/packer/start/diffview.nvim",
+    url = "https://github.com/sindrets/diffview.nvim"
+  },
+  ["fzf-lua"] = {
+    loaded = true,
+    path = "/home/mikeos/.local/share/nvim/site/pack/packer/start/fzf-lua",
+    url = "https://github.com/ibhagwan/fzf-lua"
   },
   kanagawa = {
     config = { "\27LJ\2\n¹\1\0\0\3\0\6\0\0176\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\0\0009\0\1\0'\2\3\0B\0\2\0016\0\0\0009\0\1\0'\2\4\0B\0\2\0016\0\0\0009\0\1\0'\2\5\0B\0\2\1K\0\1\0\31colorscheme kanagawa-lotus\30colorscheme kanagawa-wave colorscheme kanagawa-dragon\25colorscheme kanagawa\bcmd\bvim\0" },
@@ -105,6 +115,11 @@ _G.packer_plugins = {
     path = "/home/mikeos/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["markdown-preview.nvim"] = {
+    loaded = true,
+    path = "/home/mikeos/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
+  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/home/mikeos/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
@@ -115,21 +130,47 @@ _G.packer_plugins = {
     path = "/home/mikeos/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["mini.pick"] = {
+    loaded = true,
+    path = "/home/mikeos/.local/share/nvim/site/pack/packer/start/mini.pick",
+    url = "https://github.com/echasnovski/mini.pick"
+  },
+  neogit = {
+    config = { "\27LJ\2\n8\0\0\4\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\1\2\0004\3\0\0B\1\2\1K\0\1\0\nsetup\vneogit\frequire\0" },
+    loaded = true,
+    path = "/home/mikeos/.local/share/nvim/site/pack/packer/start/neogit",
+    url = "https://github.com/NeogitOrg/neogit"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/mikeos/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/home/mikeos/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/mikeos/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/mikeos/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
   ["nvim-web-devicons"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/mikeos/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
+    loaded = true,
+    path = "/home/mikeos/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
+  },
+  ["oil.nvim"] = {
+    config = { "\27LJ\2\n1\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\boil\frequire\0" },
+    loaded = true,
+    path = "/home/mikeos/.local/share/nvim/site/pack/packer/start/oil.nvim",
+    url = "https://github.com/stevearc/oil.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -141,6 +182,14 @@ _G.packer_plugins = {
     path = "/home/mikeos/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["render-markdown.nvim"] = {
+    config = { "\27LJ\2\nA\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\20render-markdown\frequire\0" },
+    load_after = {},
+    loaded = true,
+    needs_bufread = false,
+    path = "/home/mikeos/.local/share/nvim/site/pack/packer/opt/render-markdown.nvim",
+    url = "https://github.com/MeanderingProgrammer/render-markdown.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/mikeos/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -149,10 +198,27 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: oil.nvim
+time([[Config for oil.nvim]], true)
+try_loadstring("\27LJ\2\n1\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\boil\frequire\0", "config", "oil.nvim")
+time([[Config for oil.nvim]], false)
+-- Config for: neogit
+time([[Config for neogit]], true)
+try_loadstring("\27LJ\2\n8\0\0\4\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\1\2\0004\3\0\0B\1\2\1K\0\1\0\nsetup\vneogit\frequire\0", "config", "neogit")
+time([[Config for neogit]], false)
 -- Config for: kanagawa
 time([[Config for kanagawa]], true)
 try_loadstring("\27LJ\2\n¹\1\0\0\3\0\6\0\0176\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\0\0009\0\1\0'\2\3\0B\0\2\0016\0\0\0009\0\1\0'\2\4\0B\0\2\0016\0\0\0009\0\1\0'\2\5\0B\0\2\1K\0\1\0\31colorscheme kanagawa-lotus\30colorscheme kanagawa-wave colorscheme kanagawa-dragon\25colorscheme kanagawa\bcmd\bvim\0", "config", "kanagawa")
 time([[Config for kanagawa]], false)
+-- Load plugins in order defined by `after`
+time([[Sequenced loading]], true)
+vim.cmd [[ packadd nvim-treesitter ]]
+vim.cmd [[ packadd render-markdown.nvim ]]
+
+-- Config for: render-markdown.nvim
+try_loadstring("\27LJ\2\nA\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\20render-markdown\frequire\0", "config", "render-markdown.nvim")
+
+time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

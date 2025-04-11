@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set("n","<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n","<leader>pv", "<CMD>Oil<CR>")
 
 vim.keymap.set("n","<leader>zf", "<S-v>j%zf")
 
@@ -21,49 +21,14 @@ local tabcounter = 1
 		end
 	end)
 
-	vim.keymap.set("n","<A-1>", function ()
-		vim.cmd.tabfirst()
-	end)
-
-	vim.keymap.set("n","<A-2>", function ()
-		vim.cmd.tabnext(2)
-	end)
-
-	vim.keymap.set("n","<A-3>", function ()
-		vim.cmd.tabnext(3)
-	end)
-
-	vim.keymap.set("n","<A-4>", function ()
-		vim.cmd.tabnext(4)
-	end)
-
-	vim.keymap.set("n","<A-5>", function ()
-		vim.cmd.tabnext(5)
-	end)
-
-	vim.keymap.set("n","<A-6>", function ()
-			vim.cmd.tabnext(6)
-	end)
-
-	vim.keymap.set("n","<A-7>", function ()
-			vim.cmd.tabnext(7)
-	end)
-
-	vim.keymap.set("n","<A-8>", function ()
-			vim.cmd.tabnext(8)
-	end)
-
-	vim.keymap.set("n","<A-9>", function ()
-			vim.cmd.tabnext(9)
-	end)
-
-	vim.keymap.set("n","<A-0>", function ()
-			vim.cmd.tabnext(10)
-	end)
+	vim.keymap.set({"n", "t"}, "<A-1>", vim.cmd.tabfirst)
+	for i=2,10 do
+		  vim.keymap.set({"n", "t"}, string.format("<A-%i>", i % 10), function () vim.cmd.tabnext(i) end)
+	  end
 	--}
 
 vim.keymap.set("t","<A-Esc>", "<C-\\><C-n>")
-
+vim.keymap.set("t","<A-p>", "<C-\\><C-n>pi")
 
 
 -- --------------------RENAME--------------------
@@ -74,20 +39,11 @@ vim.keymap.set("t","<A-Esc>", "<C-\\><C-n>")
 
 -- --------------------COMPILE-------------------
 -- {
-vim.keymap.set("n", "<leader>sm", 
-function()
-	vim.ui.input({
-		prompt = "Make: ",
-	}, function (search)
-		if search == nil then
-			print("Escaped")
-			return
-		end
+vim.keymap.set("n", "<leader>sm", function()
 		CreateWindow()
-		vim.cmd.term("make " .. search)
+		vim.cmd.term("./build.sh")
 		vim.cmd.norm("i")
 	end)
-end)
 -- }
 
 
@@ -115,6 +71,30 @@ function()
 end)
 -- }
 
+-- --------------------SHELL COMMAND (new workspace)-------------------
+-- {
+vim.keymap.set("n", "<leader>sS", 
+function()
+    vim.ui.input({
+		prompt = "Terminal: ",
+		completion = "shellcmd",}, function (search)
+			if search == nil then
+				print("Escaped")
+				return
+			end
+			local _, count = string.gsub(search, " ", " ")
+			CreateWorkspace()
+
+			if count == string.len(search) then
+				vim.cmd.term()
+			else
+				vim.cmd.term(search)
+			end
+				vim.cmd.norm("i")
+		end)
+end)
+
+-- }
 RUN = "./test"
 vim.keymap.set("n", "<leader>sr", 
 function()
